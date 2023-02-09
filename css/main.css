@@ -1,0 +1,427 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --bg-color: #004777;
+  --txt-color: #1e3e54;
+  --bold-txt: #ebeced;
+  --para-color: #777777;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bold-txt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-color);
+  border-radius: 30px;
+  height: 20px;
+}
+.txt_center {
+  text-align: center;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* END GLOBAL */
+/* ------MEDIA-----SCREEN------- */
+/* SMALL */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* MEDIUM */
+@media (min-width: 992px) {
+  .container {
+    width: 970;
+  }
+}
+/* LARGE */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* ------START-----HEADER------- */
+.header {
+  padding: 20px;
+}
+.header .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo h1 {
+  color: var(--bg-color);
+  font-size: 1.6rem;
+}
+.header .links {
+  position: relative;
+}
+.header .links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.header .links .icon span {
+  background-color: var(--txt-color);
+  margin-bottom: 6px;
+  height: 2px;
+}
+.header .links .icon span:first-child {
+  width: 100%;
+}
+.header .links .icon span:nth-child(2) {
+  width: 80%;
+  transition: 0.4s;
+}
+.header .links:hover .icon span:nth-child(2) {
+  width: 100%;
+  transition: 0.3s;
+}
+.header .links:hover ul {
+  display: block;
+  transition: all 0.5s;
+}
+.header .links .icon span:last-child {
+  width: 100%;
+}
+.header .links ul {
+  list-style: none;
+  background-color: var(--bold-txt);
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);
+  min-width: 200px;
+  display: none;
+  padding: 10px 0;
+  z-index: 1;
+}
+.header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--bold-txt) transparent;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  transition: all 0.5s;
+}
+.header .links ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--para-color);
+  padding: 20px;
+}
+/* ------END-----HEADER------- */
+/* ------START-----LANDING------- */
+.landing {
+  background: url(/Images/sunset-1651426_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: var(--para-color);
+  background-blend-mode: multiply;
+  color: whitesmoke;
+  text-align: center;
+}
+.landing .txt h3 {
+  margin: 0;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: whitesmoke;
+  display: block;
+}
+/* ------END-----LANDING------- */
+/* ------START-----FEATURES------- */
+.features {
+  padding: 60px 0;
+  background-color: var(--bold-txt);
+}
+.features .container {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .features .container {
+    grid-auto-flow: row;
+  }
+}
+.features .feat {
+  text-align: center;
+}
+.features .feat i {
+  font-size: 3rem;
+  color: var(--bg-color);
+}
+.features .feat h3 {
+  margin: 30px 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.features .feat p {
+  color: var(--para-color);
+  line-height: 25px;
+}
+/* ------END-----FEATURES------- */
+/* ------START-----SERVICES------- */
+.services .container {
+  width: 100%;
+  padding: 40px 0;
+}
+/* COMPONENTS FOR HEADING */
+.sepcial-heading {
+  text-align: center;
+  color: var(--bold-txt);
+  font-size: 7rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -3px;
+}
+.special-paragraph {
+  margin: -30px 0;
+  text-align: center;
+  color: var(--txt-color);
+}
+@media (max-width: 768px) {
+  .sepcial-heading {
+    font-size: 5rem;
+  }
+  .special-paragraph {
+    margin: -20px 0;
+  }
+}
+/* END-- COMPONENTS FOR HEADING */
+.services .services_content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 160px;
+  padding: 0px 70px;
+}
+.services .services_content .srv {
+  display: flex;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .services .services_content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .services_content .srv i {
+  color: var(--bg-color);
+  font-size: 2.3rem;
+  flex-basis: 60px;
+}
+.services .services_content .srv .txt {
+  flex: 1;
+}
+.services .services_content .srv .txt h4 {
+  margin: 0;
+  color: var(--txt-color);
+}
+.services .services_content .srv .txt p {
+  color: var(--para-color);
+  line-height: 1.7;
+  font-weight: 500;
+}
+.services .services_content .image {
+  text-align: center;
+  position: relative;
+}
+.services .services_content .image::before {
+  content: "";
+  background-color: var(--bg-color);
+  position: absolute;
+  top: -50px;
+  right: 30px;
+  width: 70px;
+  height: calc(100% + 100px);
+  z-index: -1;
+}
+.services .services_content .image img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
+@media (max-width: 1120px) {
+  .services .services_content .image {
+    display: none;
+  }
+}
+/* ------END-----SERVICES------- */
+/* ------START-----PORTFOLIO------- */
+.portfolio {
+  background-color: var(--para-color);
+}
+.portfolio .container {
+  width: 100%;
+  padding: 0 40px;
+}
+.portfolio-section {
+  margin-top: 140px;
+  padding: 0 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.portfolio-section .sct img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0;
+}
+.portfolio-section .sct .txt h5 {
+  margin: 0;
+}
+.portfolio-section .sct .txt {
+  background-color: var(--bold-txt);
+  margin: 0;
+  padding: 20px;
+  width: 350px;
+}
+
+/* ------END-----PORTFOLIO------- */
+/* ------START-----ABOUT------- */
+.about .container {
+  padding: 20px 40px;
+}
+.info_about {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.info_about .image {
+  position: relative;
+}
+.info_about .image img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+}
+.info_about .image::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 350px;
+  top: -40px;
+  right: 70px;
+  background-color: var(--bg-color);
+  z-index: -1;
+}
+
+.info_about .image::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 430px;
+  top: -40px;
+  left: -20px;
+  background-color: var(--bold-txt);
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .info_about .image::after,
+  ::before {
+    display: none;
+  }
+  .info_about .paragraph {
+    width: 100%;
+    text-align: center;
+  }
+  .info_about .image {
+    text-align: center;
+  }
+}
+
+.info_about .paragraph {
+  font-size: 1rem;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+}
+.info_about .paragraph .para_1 {
+  font-weight: bold;
+}
+.info_about .paragraph .para_2 {
+  color: var(--para-color);
+}
+.info_about hr {
+  border-color: var(--bg-color);
+  border-width: 1px;
+  border-style: solid;
+  margin: 50px 0;
+  width: 50%;
+}
+/* ------END-----ABOUT------- */
+/* ------START-----CONTACT------- */
+.contact .container {
+  padding: 30px 20px;
+  margin-top: 30px;
+  background-color: var(--para-color);
+}
+.txt-center {
+  text-align: center;
+}
+.contact-info {
+  margin-top: 90px;
+}
+.contact-para p {
+  font-size: 2rem;
+  color: var(--bg-color);
+  font-weight: 800;
+  margin: 20px 0;
+}
+.contact-para p > a {
+  color: var(--bold-txt);
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+.contact-link p {
+  color: var(--txt-color);
+  margin: 20px 0;
+}
+.contact-link i {
+  color: var(--bg-color);
+}
+/* ------END-----CONTACT------- */
+/* ------START-----FOOTER------- */
+.footer{
+  background-color: var(--bg-color);
+  padding: 20px 0;
+  font-size: 1.3rem;
+  color: var(--bold-txt);
+}
+.footer span{
+  color: var(--para-color);
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+/* ------END-----FOOTER------- */
